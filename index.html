@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Linear Regression Premium Presentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom Keyframe Animations */
+        @keyframes shimmer {
+            0%, 100% { transform: translateX(-50%) translateY(-50%) rotate(20deg); }
+            50% { transform: translateX(0%) translateY(0%) rotate(20deg); }
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 10px 40px rgba(var(--color-primary-rgb), 0.2); }
+            50% { transform: scale(1.02); box-shadow: 0 15px 50px rgba(var(--color-primary-rgb), 0.4); }
+        }
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Applying animations via CSS to be picked up by Tailwind */
+        .animate-shimmer { animation: shimmer 4s infinite linear; }
+        .animate-pulse { animation: pulse 2.5s ease-in-out infinite; }
+        .animate-fadeInScale { animation: fadeInScale 1.2s ease-out both; }
+        .animate-fadeInUp { animation: fadeInUp 1s ease-out both; }
+        .animate-fadeInDown { animation: fadeInDown 0.8s ease-out both; }
+        
+        /* Theme Variables */
+        :root, [data-theme='premium-gold'] {
+            --color-primary-rgb: 250, 204, 21;    /* yellow-400 */
+            --color-secondary-rgb: 249, 115, 22;  /* orange-500 */
+            --color-accent-rgb: 147, 51, 234;     /* purple-600 */
+            --color-highlight-rgb: 255, 107, 107; /* #FF6B6B */
+            --color-positive-rgb: 74, 222, 128;   /* green-400 */
+            --color-negative-rgb: 255, 107, 107;  /* #FF6B6B */
+            --color-special-rgb: 138, 43, 226;    /* #8a2be2 */
+        }
+
+        [data-theme='cyber-neon'] {
+            --color-primary-rgb: 34, 211, 238;    /* cyan-400 */
+            --color-secondary-rgb: 236, 72, 153;  /* pink-500 */
+            --color-accent-rgb: 99, 102, 241;     /* indigo-500 */
+            --color-highlight-rgb: 192, 132, 252; /* purple-400 */
+            --color-positive-rgb: 52, 211, 153;   /* emerald-400 */
+            --color-negative-rgb: 244, 63, 94;    /* rose-500 */
+            --color-special-rgb: 217, 70, 239;    /* fuchsia-500 */
+        }
+
+        /* Custom scrollbar for aesthetic consistency */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(var(--color-primary-rgb), 0.1);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(var(--color-primary-rgb), 0.5);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(var(--color-primary-rgb), 0.8);
+        }
+    </style>
+  <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    primary: 'rgba(var(--color-primary-rgb), <alpha-value>)',
+                    secondary: 'rgba(var(--color-secondary-rgb), <alpha-value>)',
+                    accent: 'rgba(var(--color-accent-rgb), <alpha-value>)',
+                    highlight: 'rgba(var(--color-highlight-rgb), <alpha-value>)',
+                    positive: 'rgba(var(--color-positive-rgb), <alpha-value>)',
+                    negative: 'rgba(var(--color-negative-rgb), <alpha-value>)',
+                    special: 'rgba(var(--color-special-rgb), <alpha-value>)',
+                },
+                textShadow: {
+                    DEFAULT: '0 0 80px rgba(var(--color-primary-rgb), 0.5)',
+                },
+                boxShadow: {
+                    'glow-sm': '0 0 30px rgba(var(--color-primary-rgb), 0.3)',
+                    'glow-md': '0 10px 30px rgba(var(--color-primary-rgb), 0.4)',
+                    'glow-lg': '0 0 20px rgba(var(--color-primary-rgb), 0.8)',
+                    'hover-glow': '0 10px 40px rgba(var(--color-primary-rgb), 0.2)',
+                }
+            }
+        }
+    }
+  </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-black">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
