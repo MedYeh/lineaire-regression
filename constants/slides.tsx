@@ -44,7 +44,7 @@ export const SLIDES_DATA: SlideData[] = [
         content: {
             title: '📊 RÉGRESSION LINÉAIRE',
             subtitle: 'Le Fondement du Machine Learning',
-            badge: 'Presente par Mohamed Yehdih',
+            badge: 'Presenté par Mohamed Yehdih',
         },
     },
     {
